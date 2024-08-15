@@ -9,3 +9,4 @@
 /home/mlhotel/Bureau/Csharp/ServerHelper/ServerHelper/bin/Debug/ServerHelper.pdb
 /home/mlhotel/Bureau/Csharp/ServerHelper/ServerHelper/obj/x86/Debug/ServerHelper.exe
 /home/mlhotel/Bureau/Csharp/ServerHelper/ServerHelper/obj/x86/Debug/ServerHelper.pdb
+/home/mlhotel/Bureau/Csharp/ServerHelper/ServerHelper/obj/x86/Debug/ServerHelper.csproj.AssemblyReference.cache

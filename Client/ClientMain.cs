@@ -6,7 +6,10 @@ namespace Client
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Websocket client side");
+            Client.Connect(Client.wsUrl).Wait();
+
+            Console.ReadKey();
         }
     }
 }

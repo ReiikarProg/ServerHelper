@@ -1,17 +1,27 @@
 ﻿<Properties StartupConfiguration="{8CC7A27C-8251-4F59-83EA-215C764093CF}|Default">
   <MonoDevelop.Ide.ItemProperties.Client PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ServerHelper/ServerMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Client/ClientMain.cs">
     <Files>
-      <File FileName="ServerHelper/ServerMain.cs" Line="2" Column="2" />
-      <File FileName="ServerHelper/Source/Server.cs" Line="31" Column="46" />
-      <File FileName="ServerHelper/Source/Helper.cs" Line="6" Column="9" />
+      <File FileName="ServerHelper/ServerMain.cs" Line="9" Column="42" />
+      <File FileName="ServerHelper/Source/Server.cs" Line="7" Column="5" />
+      <File FileName="ServerHelper/Source/Tools/Helper.cs" Line="6" Column="1" />
+      <File FileName="Client/Source/Client.cs" Line="61" Column="66" />
+      <File FileName="ServerHelper/Source/Tools/Logger.cs" Line="1" Column="1" />
+      <File FileName="Client/ClientMain.cs" Line="11" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ServerHelper" expanded="True">
-            <Node name="Client" expanded="True" />
-            <Node name="ServerHelper" expanded="True" />
+            <Node name="Client" expanded="True">
+              <Node name="Source" expanded="True" />
+              <Node name="ClientMain.cs" selected="True" />
+            </Node>
+            <Node name="ServerHelper" expanded="True">
+              <Node name="Source" expanded="True">
+                <Node name="Tools" expanded="True" />
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
