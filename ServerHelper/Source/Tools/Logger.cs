@@ -9,8 +9,6 @@ namespace ServerHelper
         {
             try
             {
-                Console.WriteLine(logMessage);
-
                 using (StreamWriter w = File.AppendText(ServerMain.LogsDir))
                 {
                     w.WriteLine($"{DateTime.Now.ToLocalTime()}: {logMessage}");

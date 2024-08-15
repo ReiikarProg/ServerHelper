@@ -62,25 +62,24 @@
                     // process
                     ServerMain.ProcessRequest(context);
                 }
-
             }
             catch (Exception ex)
             {
                 Logger.Log($"Exception caught in \"ServerMain\": {ex}");
                 running = false;
             }
-
-            /* Websocket managment */
-            // ServerWebSocket serverWS = new ServerWebSocket();
-            // serverWS.Start();
         }
 
+        /// <summary>
+        /// Http process request method
+        /// </summary>
+        /// <param name="context"></param>
         internal static void ProcessRequest(HttpListenerContext context)
         {
             string type = context.Request.HttpMethod;
             string request = context.Request.Url.AbsolutePath;
 
-            Console.WriteLine($"Receiving {type} request from {request}");
+            Logger.Log($"Receiving {type} request from {request}");
 
             HttpListenerResponse httpResponse = context.Response;
             httpResponse.StatusCode = 200;
@@ -138,7 +137,7 @@
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception caught: {ex.Message}");
+                Logger.Log($"Exception caught: {ex.Message}");
             }
         }
     }

@@ -37,6 +37,9 @@ namespace ServerHelper
             response.ContentLength64 = dataArray.LongLength;
             if (code != 200) 
                 response.StatusCode = code;
+
+            Logger.Log($"Replied: {code} - {data}");
+
             response.OutputStream.Write(dataArray, 0, data.Length);
         }
     }

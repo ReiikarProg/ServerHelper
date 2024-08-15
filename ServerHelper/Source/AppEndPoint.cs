@@ -11,14 +11,15 @@ namespace ServerHelper
         {
             Title = "Listening to client \'app\'",
             Command_1 = "/ - Ici",
-            Command_2 = "/ping - Permet au client de savoir si le serveur est connecté"
+            Command_2 = "/ping - Permet au client de savoir si le serveur est connecté",
+            Command_3 = "/websocket - Créer un websocket pour envoyer des events au client"
         };
 
         internal static void ProcessRequest(HttpListenerContext context)
         {
             // on récup la requête
             string appRequest = context.Request.Url.LocalPath.Substring("/app/".Length);
-            Console.WriteLine($"Receiving a request from the client [{appRequest}]");
+            Logger.Log($"Receiving a request from the client [{appRequest}]");
             var httpResponse = context.Response;
 
             try
@@ -36,6 +37,17 @@ namespace ServerHelper
                         Helper.RespondString("OK", ref httpResponse);
                         break;
 
+                    case "websocket":
+                        // Event registry
+
+
+                        // Prepare WS
+                        ServerWebSocket serverWS = new ServerWebSocket();
+                        serverWS.Start();
+
+                        Helper.RespondString($"Websocket created on url: {ServerWebSocket.wsUrl}", ref httpResponse);
+                        break;
+
                     default:
                         Helper.RespondString($"Unknwon request [{appRequest}]", ref httpResponse, 400);
                         break;
@@ -43,7 +55,7 @@ namespace ServerHelper
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Exception caught: {ex}");
+                Logger.Log($"Exception caught: {ex}");
             }
         }
 

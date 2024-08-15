@@ -3,6 +3,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Net.WebSockets;
+using System.Windows.Forms;
 
 namespace Client
 {
@@ -14,33 +15,27 @@ namespace Client
         public static UTF8Encoding uft8Encoding = new UTF8Encoding();
 
         /// <summary>
-        /// L'url de connexion Websocket, qui ne commence pas par 'http(s)'.
-        /// </summary>
-        internal const string wsUrl = "ws://localhost:80/";
-
-        /// <summary>
         /// Objet websocket
         /// </summary>
         internal ClientWebSocket WebSocket = null;
 
         /// <summary>
-        /// Connect le client en Websocket au serveur d'écoute à l'URL fournie,
+        /// Connecte le client en Websocket au serveur d'écoute à l'URL fournie,
         /// puis envoie/reçoie des données en asynchrone.
         /// </summary>
         /// 
         /// <param name="url">URL.</param>
-        public static async Task Connect(string url)
+        public async Task ConnectAndWaitForEvents(string url)
         {
             ClientWebSocket webSocket = null;
             try
             {
                 webSocket = new ClientWebSocket();
                 // connection au serveur
-                await webSocket.ConnectAsync(new Uri(wsUrl), CancellationToken.None);
-                Console.WriteLine("Successfully connected");
-
-                // une fois connecté, envoi et reçoit de manière asynchrone
-                await Task.WhenAll(WSClient.Receive(webSocket), WSClient.Send(webSocket));
+                await webSocket.ConnectAsync(new Uri(url), CancellationToken.None);
+            
+                // une fois connecté, attend en asynchrone des info du serveur
+                await WSClient.Receive(webSocket);
             }
             catch (Exception e)
             {
@@ -50,27 +45,6 @@ namespace Client
             {
                 if (webSocket != null)
                     webSocket.Dispose();
-            }
-        }
-
-        /// <summary>
-        /// Envoie asynchrone
-        /// </summary>
-        ///
-        /// <param name="webSocket">le client</param>
-        private static async Task Send(ClientWebSocket webSocket)
-        {
-            // Permet l'envoi de donnée tant que le WS est ouvert
-            while (webSocket.State == WebSocketState.Open)
-            {
-                Console.Write("Données à envoyer au serveur : ");
-                string data = Console.ReadLine();
-                byte[] buffer = uft8Encoding.GetBytes(data);
-
-                await webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Binary, false, CancellationToken.None);
-                Console.WriteLine($"Sent: {data}");
-
-                await Task.Delay(0);
             }
         }
 
@@ -96,7 +70,7 @@ namespace Client
                 // sinon, traite la donnée reçue.
                 else
                 {
-                    Console.WriteLine($"Received: {Encoding.UTF8.GetString(buffer)}");
+                    MessageBox.Show("Reception d'un évènement WebSocket !");
                 }
             }
         }

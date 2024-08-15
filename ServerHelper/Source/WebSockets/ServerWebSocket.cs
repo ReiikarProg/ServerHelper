@@ -5,10 +5,17 @@
     using System.Net.WebSockets;
     using System.Threading;
     using System.Text;
+    using System.Threading.Tasks;
+    using System.Runtime.InteropServices;
+    using System.ComponentModel;
 
     class ServerWebSocket
     {
-        private const string wsUrl = "http://localhost:80/";
+        internal const string wsUrl = "http://localhost:80/";
+
+        internal static bool isConnected = false;
+
+        public event EventHandler SampleEventHandler;
 
         public async void Start()
         {
@@ -16,14 +23,42 @@
             httpListener.Prefixes.Add(ServerWebSocket.wsUrl);
             httpListener.Start();
 
-            Console.WriteLine($"ServerWebSocket started, listening on {ServerWebSocket.wsUrl}");
+            Logger.Log($"ServerWebSocket started, listening on {ServerWebSocket.wsUrl}");
 
             while (true)
             {
                 HttpListenerContext context = await httpListener.GetContextAsync();
                 if (context.Request.IsWebSocketRequest)
                 {
-                    ServerWebSocket.ProcessRequest(context);
+                    // connexion
+                    WebSocketContext webSocketContext = null;
+                    try
+                    {
+                        webSocketContext = await context.AcceptWebSocketAsync(subProtocol: null);
+                        string ipAdress = context.Request.RemoteEndPoint.Address.ToString();
+                        ServerWebSocket.isConnected = true;
+                        Logger.Log($"[WS] - Client connected:(IpAdress: {ipAdress})");
+
+                        // register the event
+                        this.SampleEventHandler += OnSampleEventFired;
+                        Logger.Log($"[WS] - Event successfully registered");
+
+                        var t = Task.Run(async delegate
+                        {
+                            await Task.Delay(5000);
+                            if (this.SampleEventHandler != null)
+                            {
+                                this.SampleEventHandler.Invoke(webSocketContext, null);
+                            }
+                        });
+                        t.Wait();
+                    }
+                    catch (Exception e)
+                    {
+                        context.Response.StatusCode = 500;
+                        context.Response.Close();
+                        Logger.Log($"[WS] - Exception caught: {e}");
+                    }
                 }
                 else
                 {
@@ -34,56 +69,26 @@
             }
         }
 
-        private static async void ProcessRequest (HttpListenerContext context)
+        public static async void OnSampleEventFired(object sender, EventArgs e)
         {
-            WebSocketContext webSocketContext = null;
-            try
-            {
-                webSocketContext = await context.AcceptWebSocketAsync(subProtocol: null);
-                string ipAdress = context.Request.RemoteEndPoint.Address.ToString();
-                Console.WriteLine($"Connected: IpAdress {ipAdress}");
-            }
-            catch (Exception e)
-            {
-                context.Response.StatusCode = 500;
-                context.Response.Close();
-                Console.WriteLine($"Exception caught: {e}");
-            }
+            // Casting
+            WebSocketContext webSocketContext = (WebSocketContext)sender;
+            Logger.Log("[WS] - Event fired, sending...");
 
             WebSocket socket = webSocketContext.WebSocket;
             try
             {
-                byte[] receivedBuffer = new byte[1024];
-                while (socket.State == WebSocketState.Open)
+                if (socket.State == WebSocketState.Open)
                 {
-                    WebSocketReceiveResult result = await socket.ReceiveAsync(new ArraySegment<byte>(receivedBuffer), CancellationToken.None);
-                    if (result.MessageType == WebSocketMessageType.Close)
-                    {
-                        await socket.CloseAsync(WebSocketCloseStatus.NormalClosure, "", CancellationToken.None);
-                    }
-                    else
-                    {
-                        // reponse
-                        Console.WriteLine($"Received: {Encoding.UTF8.GetString(receivedBuffer)}");
-
-                        // traite la demande et prépare la réponse
-                        byte[] bufferToSend = WSEndPoint.ProcessRequest(receivedBuffer);
-
-                        // envoie de la réponse asynchrone
-                        await socket.SendAsync(new ArraySegment<byte>(bufferToSend, 0, bufferToSend.Length), WebSocketMessageType.Binary, result.EndOfMessage, CancellationToken.None);
-                    }
+                    var buffer = Encoding.UTF8.GetBytes("Event fired");
+                    await socket.SendAsync(new ArraySegment<byte>(buffer, 0, buffer.Length), WebSocketMessageType.Binary, false, CancellationToken.None);
                 }
             }
-            catch (Exception e)
+            catch (Exception eex)
             {
-                Console.WriteLine($"Exception: {e}");
-            }
-            finally
-            {
-                if (socket != null)
-                    socket.Dispose();
+                Logger.Log(eex.Message);
             }
         }
-    }
+     }
 }
 

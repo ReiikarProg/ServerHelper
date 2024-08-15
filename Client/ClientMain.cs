@@ -4,13 +4,25 @@ using System.Text;
 using System.Security.Policy;
 using System.Threading.Tasks;
 using System.IO;
+using System.Net;
 
 namespace Client
 {
     class ClientMain
     {
+        /// <summary>
+        /// Http url
+        /// </summary>
         private const string baseUrl = "http://localhost:8666/app";
-        
+
+        /// <summary>
+        /// WS url
+        /// </summary>
+        private const string wsUrl = "ws://localhost:80/";
+
+        /// <summary>
+        /// Client object
+        /// </summary>
         private static readonly HttpClient _httpClient = new HttpClient();
 
         static void Main(string[] args)
@@ -18,6 +30,7 @@ namespace Client
             Console.WriteLine("*** WSClient ***");
             Console.WriteLine("- Liste des commandes -\n");
             Console.WriteLine(" \"ping\" - Ping le serveur");
+            Console.WriteLine(" \"websocket\" - Demande la création d'un websocket");
             Console.WriteLine(" \"q/Q\" - Exit");
 
             while (true)
@@ -38,7 +51,9 @@ namespace Client
                             Environment.Exit(0);
                             break;
 
+                        // les vraies requêtes
                         case "ping":
+                        case "websocket":
                             break;
 
                         default:
@@ -70,8 +85,9 @@ namespace Client
                                 });
 
                                 task.Wait(2000); // 2 sec timeout
-                                Console.WriteLine($"Received: {responseValue}");
-                                // Do some thing depending on the response !
+                                Console.WriteLine($"Received: {(int) response.StatusCode} - {responseValue}");
+
+                                ClientMain.ProcessResponse(requestStr, response.StatusCode, responseValue);
                             }
                         }
                         catch(Exception e)
@@ -80,6 +96,21 @@ namespace Client
                         }
                     }
                 }
+            }
+        }
+
+        /// <param name="initialRequest">la requête dont on traite la réponse</param>
+        /// <param name="statusCode">le code retour de la requête</param>
+        /// <param name="responseStr"></param>
+        static async void ProcessResponse(string initialRequest, HttpStatusCode statusCode, string responseStr)
+        {
+            Console.WriteLine($"Entering \"ProcessingResponse\" method with parameters: Request -> {initialRequest}, ReturnCode -> {(int) statusCode}");
+
+            if (statusCode == HttpStatusCode.OK && initialRequest.Equals("websocket", StringComparison.OrdinalIgnoreCase))
+            {
+                Console.WriteLine("Connecting to the server websocket");
+                WSClient wsClient = new WSClient();
+                await wsClient.ConnectAndWaitForEvents(ClientMain.wsUrl);
             }
         }
     }
