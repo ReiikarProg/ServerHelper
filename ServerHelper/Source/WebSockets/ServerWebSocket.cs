@@ -4,25 +4,26 @@
     using System;
     using System.Net.WebSockets;
     using System.Threading;
+    using System.Text;
 
-    class Server
+    class ServerWebSocket
     {
-        private const string url = "https://localhost:8666/";
+        private const string wsUrl = "http://localhost:80/";
 
         public async void Start()
         {
             HttpListener httpListener = new HttpListener();
-            httpListener.Prefixes.Add(Server.url);
+            httpListener.Prefixes.Add(ServerWebSocket.wsUrl);
             httpListener.Start();
 
-            Console.WriteLine($"Server started, listening on {Server.url}");
+            Console.WriteLine($"ServerWebSocket started, listening on {ServerWebSocket.wsUrl}");
 
             while (true)
             {
                 HttpListenerContext context = await httpListener.GetContextAsync();
                 if (context.Request.IsWebSocketRequest)
                 {
-                    Server.ProcessRequest(context);
+                    ServerWebSocket.ProcessRequest(context);
                 }
                 else
                 {
@@ -62,7 +63,14 @@
                     }
                     else
                     {
-                        await socket.SendAsync(new ArraySegment<byte>(receivedBuffer, 0, result.Count), WebSocketMessageType.Binary, result.EndOfMessage, CancellationToken.None);
+                        // reponse
+                        Console.WriteLine($"Received: {Encoding.UTF8.GetString(receivedBuffer)}");
+
+                        // traite la demande et prépare la réponse
+                        byte[] bufferToSend = WSEndPoint.ProcessRequest(receivedBuffer);
+
+                        // envoie de la réponse asynchrone
+                        await socket.SendAsync(new ArraySegment<byte>(bufferToSend, 0, bufferToSend.Length), WebSocketMessageType.Binary, result.EndOfMessage, CancellationToken.None);
                     }
                 }
             }

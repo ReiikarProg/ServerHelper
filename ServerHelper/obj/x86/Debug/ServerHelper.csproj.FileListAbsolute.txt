@@ -10,3 +10,10 @@
 /home/mlhotel/Bureau/Csharp/ServerHelper/ServerHelper/obj/x86/Debug/ServerHelper.exe
 /home/mlhotel/Bureau/Csharp/ServerHelper/ServerHelper/obj/x86/Debug/ServerHelper.pdb
 /home/mlhotel/Bureau/Csharp/ServerHelper/ServerHelper/obj/x86/Debug/ServerHelper.csproj.AssemblyReference.cache
+C:\Users\mathi\OneDrive\Documents\Coding\ServerHelper\ServerHelper\bin\Debug\ServerHelper.exe.config
+C:\Users\mathi\OneDrive\Documents\Coding\ServerHelper\ServerHelper\bin\Debug\ServerHelper.exe
+C:\Users\mathi\OneDrive\Documents\Coding\ServerHelper\ServerHelper\bin\Debug\ServerHelper.pdb
+C:\Users\mathi\OneDrive\Documents\Coding\ServerHelper\ServerHelper\obj\x86\Debug\ServerHelper.csproj.AssemblyReference.cache
+C:\Users\mathi\OneDrive\Documents\Coding\ServerHelper\ServerHelper\obj\x86\Debug\ServerHelper.csproj.CoreCompileInputs.cache
+C:\Users\mathi\OneDrive\Documents\Coding\ServerHelper\ServerHelper\obj\x86\Debug\ServerHelper.exe
+C:\Users\mathi\OneDrive\Documents\Coding\ServerHelper\ServerHelper\obj\x86\Debug\ServerHelper.pdb

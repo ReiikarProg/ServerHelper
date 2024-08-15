@@ -1,0 +1,143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|c:\\users\\mathi\\onedrive\\documents\\coding\\serverhelper\\serverhelper\\source\\tools\\interface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|solutionrelative:serverhelper\\source\\tools\\interface.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|c:\\users\\mathi\\onedrive\\documents\\coding\\serverhelper\\serverhelper\\source\\tools\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|solutionrelative:serverhelper\\source\\tools\\logger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|c:\\users\\mathi\\onedrive\\documents\\coding\\serverhelper\\serverhelper\\servermain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|solutionrelative:serverhelper\\servermain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|c:\\users\\mathi\\onedrive\\documents\\coding\\serverhelper\\serverhelper\\source\\websockets\\wsendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|solutionrelative:serverhelper\\source\\websockets\\wsendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|c:\\users\\mathi\\onedrive\\documents\\coding\\serverhelper\\serverhelper\\source\\appendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|solutionrelative:serverhelper\\source\\appendpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|c:\\users\\mathi\\onedrive\\documents\\coding\\serverhelper\\serverhelper\\source\\tools\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|solutionrelative:serverhelper\\source\\tools\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|c:\\users\\mathi\\onedrive\\documents\\coding\\serverhelper\\serverhelper\\source\\websockets\\serverwebsocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A34DA5A-42A5-48E3-8D2C-C6B71BD4B082}|ServerHelper\\ServerHelper.csproj|solutionrelative:serverhelper\\source\\websockets\\serverwebsocket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Interface.cs",
+              "DocumentMoniker": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\Tools\\Interface.cs",
+              "RelativeDocumentMoniker": "ServerHelper\\Source\\Tools\\Interface.cs",
+              "ToolTip": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\Tools\\Interface.cs",
+              "RelativeToolTip": "ServerHelper\\Source\\Tools\\Interface.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAgwCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T13:55:09.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Logger.cs",
+              "DocumentMoniker": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\Tools\\Logger.cs",
+              "RelativeDocumentMoniker": "ServerHelper\\Source\\Tools\\Logger.cs",
+              "ToolTip": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\Tools\\Logger.cs",
+              "RelativeToolTip": "ServerHelper\\Source\\Tools\\Logger.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T13:38:49.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WSEndPoint.cs",
+              "DocumentMoniker": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\WebSockets\\WSEndPoint.cs",
+              "RelativeDocumentMoniker": "ServerHelper\\Source\\WebSockets\\WSEndPoint.cs",
+              "ToolTip": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\WebSockets\\WSEndPoint.cs",
+              "RelativeToolTip": "ServerHelper\\Source\\WebSockets\\WSEndPoint.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAgAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T12:43:07.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AppEndPoint.cs",
+              "DocumentMoniker": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\AppEndPoint.cs",
+              "RelativeDocumentMoniker": "ServerHelper\\Source\\AppEndPoint.cs",
+              "ToolTip": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\AppEndPoint.cs",
+              "RelativeToolTip": "ServerHelper\\Source\\AppEndPoint.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T11:29:41.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServerMain.cs",
+              "DocumentMoniker": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\ServerMain.cs",
+              "RelativeDocumentMoniker": "ServerHelper\\ServerMain.cs",
+              "ToolTip": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\ServerMain.cs",
+              "RelativeToolTip": "ServerHelper\\ServerMain.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAxwDYAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T10:41:36.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Helper.cs",
+              "DocumentMoniker": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\Tools\\Helper.cs",
+              "RelativeDocumentMoniker": "ServerHelper\\Source\\Tools\\Helper.cs",
+              "ToolTip": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\Tools\\Helper.cs",
+              "RelativeToolTip": "ServerHelper\\Source\\Tools\\Helper.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBoAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T10:18:15.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ServerWebSocket.cs",
+              "DocumentMoniker": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\WebSockets\\ServerWebSocket.cs",
+              "RelativeDocumentMoniker": "ServerHelper\\Source\\WebSockets\\ServerWebSocket.cs",
+              "ToolTip": "C:\\Users\\mathi\\OneDrive\\Documents\\Coding\\ServerHelper\\ServerHelper\\Source\\WebSockets\\ServerWebSocket.cs",
+              "RelativeToolTip": "ServerHelper\\Source\\WebSockets\\ServerWebSocket.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-15T09:33:01.343Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

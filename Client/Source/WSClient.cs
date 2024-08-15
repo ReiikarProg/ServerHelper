@@ -6,7 +6,7 @@ using System.Net.WebSockets;
 
 namespace Client
 {
-    public class Client
+    public class WSClient
     {
         /// <summary>
         /// Encodage par défaut pour envoi et reception de données.
@@ -16,7 +16,7 @@ namespace Client
         /// <summary>
         /// L'url de connexion Websocket, qui ne commence pas par 'http(s)'.
         /// </summary>
-        internal const string wsUrl = "ws://localhost:8666/";
+        internal const string wsUrl = "ws://localhost:80/";
 
         /// <summary>
         /// Objet websocket
@@ -37,9 +37,10 @@ namespace Client
                 webSocket = new ClientWebSocket();
                 // connection au serveur
                 await webSocket.ConnectAsync(new Uri(wsUrl), CancellationToken.None);
+                Console.WriteLine("Successfully connected");
 
                 // une fois connecté, envoi et reçoit de manière asynchrone
-                await Task.WhenAll(Client.Receive(webSocket), Client.Send(webSocket));
+                await Task.WhenAll(WSClient.Receive(webSocket), WSClient.Send(webSocket));
             }
             catch (Exception e)
             {
@@ -49,7 +50,6 @@ namespace Client
             {
                 if (webSocket != null)
                     webSocket.Dispose();
-               
             }
         }
 
@@ -70,7 +70,7 @@ namespace Client
                 await webSocket.SendAsync(new ArraySegment<byte>(buffer), WebSocketMessageType.Binary, false, CancellationToken.None);
                 Console.WriteLine($"Sent: {data}");
 
-                await Task.Delay(1000);
+                await Task.Delay(0);
             }
         }
 
@@ -96,7 +96,7 @@ namespace Client
                 // sinon, traite la donnée reçue.
                 else
                 {
-                    Console.WriteLine($"Received: {Encoding.UTF8.GetString(buffer).TrimEnd('\0')}");
+                    Console.WriteLine($"Received: {Encoding.UTF8.GetString(buffer)}");
                 }
             }
         }
