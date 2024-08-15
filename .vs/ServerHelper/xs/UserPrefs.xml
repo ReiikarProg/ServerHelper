@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{8CC7A27C-8251-4F59-83EA-215C764093CF}|Default">
+  <MonoDevelop.Ide.ItemProperties.Client PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ServerHelper/ServerMain.cs">
+    <Files>
+      <File FileName="ServerHelper/ServerMain.cs" Line="2" Column="2" />
+      <File FileName="ServerHelper/Source/Server.cs" Line="31" Column="46" />
+      <File FileName="ServerHelper/Source/Helper.cs" Line="6" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ServerHelper" expanded="True">
+            <Node name="Client" expanded="True" />
+            <Node name="ServerHelper" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.ServerHelper PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

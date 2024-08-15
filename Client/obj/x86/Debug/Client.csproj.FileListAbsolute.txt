@@ -1,0 +1,5 @@
+/home/mlhotel/Bureau/Csharp/ServerHelper/Client/bin/Debug/Client.exe
+/home/mlhotel/Bureau/Csharp/ServerHelper/Client/bin/Debug/Client.pdb
+/home/mlhotel/Bureau/Csharp/ServerHelper/Client/obj/x86/Debug/Client.csproj.CoreCompileInputs.cache
+/home/mlhotel/Bureau/Csharp/ServerHelper/Client/obj/x86/Debug/Client.exe
+/home/mlhotel/Bureau/Csharp/ServerHelper/Client/obj/x86/Debug/Client.pdb
